@@ -1,0 +1,41 @@
+.display {
+	background: white;
+	&>&-header{
+		padding: 15px;
+	}
+	&>&-header>&-name{
+		color: #00C484;
+		font-size: 16px;
+		border-left: 4px solid #00C484;
+		margin-left: -15px; 
+		padding-left: 11px;
+		margin-bottom: 10px;
+	}
+	&>&-header>&-description{
+		font-size: 14px;
+	}
+	&>&-body{
+		padding: 10px 15px;
+	}
+	&>&-operates{
+		position: relative;
+		padding: 12px 15px;
+		border-top: 1px solid #ecedf2;
+	}
+	&>&-operates>&-icon{
+		position: absolute;
+		right: 15px;
+		top: 12px;
+		cursor : pointer;
+		color : inherit;
+		// float: right;
+		// margin-left: 10px;
+	}
+	&>&-operates>&-icon-copy{
+		right: 35px;
+	}
+	&>&-code{
+		padding : 10px 15px;
+	}
+	
+}

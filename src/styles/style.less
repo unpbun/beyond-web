@@ -4,6 +4,7 @@
 html,body,#root,.app{
 	height: 100%;
 	background: #F5F6FA;
+	color: @base;
 }
 
 @font-face {
@@ -15,8 +16,17 @@ html,body,#root,.app{
   url('//at.alicdn.com/t/font_p3lbmzlappj02j4i.svg#iconfont') format('svg');
 }
 
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 
 @import "components/container.less";
 @import "components/logo.less";
 @import "components/menus.less";
 @import "components/radio.less";
+@import "components/display.less";
