@@ -1,0 +1,30 @@
+.container {
+    position: relative;
+    &>&-sidebar{
+        width: 240px;
+        box-sizing: border-box;
+        background: white;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-right: 1px solid #d8d9e3;
+        z-index: 0;
+        &:after{
+            content: "";
+            display: block;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            width: inherit;
+            background: inherit;
+            border-style: inherit;
+            border-color: inherit;
+            border-width: inherit;
+        }
+    }
+    &>&-main{
+        margin-left: 240px;
+    }
+}
