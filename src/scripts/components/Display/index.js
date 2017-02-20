@@ -69,7 +69,7 @@ export default class Display extends React.Component {
 				{item && (<div className={`${prefix}-body`}>{content}</div>)}
 				<div className={`${prefix}-operates`}>
 					{this.renderRadios(items)}
-					<span onClick={this.handlerCopy.bind(this,code)} className={`iconfont ${prefix}-icon ${prefix}-icon-copy`} dangerouslySetInnerHTML={{__html : '&#xe669;'}}  ></span>
+					<span title="复制" onClick={this.handlerCopy.bind(this,code)} className={`iconfont ${prefix}-icon ${prefix}-icon-copy`} dangerouslySetInnerHTML={{__html : '&#xe669;'}}  ></span>
 					<span onClick={this.handlerUnfold.bind(this)} className={`iconfont ${prefix}-icon ${prefix}-icon-unfold`} dangerouslySetInnerHTML={{__html : unfold ? '&#xeb3d;' : '&#xeb3e;'}} ></span>
 				</div>
 				{this.renderCode(code)}
@@ -89,8 +89,10 @@ export default class Display extends React.Component {
 	}
 
 	renderRadios(items){
-		let {activeKey} = this.state
-		return <RadioGroup inline activeKey={activeKey} onChange={this.handlerChange.bind(this)}>{items.map((item,i)=> <Radio label={item.props.state} key={i+''} /> )}</RadioGroup>
+		if(items && items.length > 1){
+			let {activeKey} = this.state
+			return <RadioGroup inline activeKey={activeKey} onChange={this.handlerChange.bind(this)}>{items.map((item,i)=> <Radio label={item.props.state} key={i+''} /> )}</RadioGroup>
+		}
 	}
 
 }
