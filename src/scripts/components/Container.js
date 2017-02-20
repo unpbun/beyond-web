@@ -8,9 +8,7 @@ class Container extends Component {
 			<div className={prefix}>
 				<div className={`${prefix}-sidebar`}>
 					<div className="logo">Beyond</div>
-					<List title="入门">
-						<Item>设计原则</Item>
-					</List>
+		
 					<List title="原型组件">
 						<Item>Document</Item>
 						<Item>Placeholder</Item>
