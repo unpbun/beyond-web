@@ -18,6 +18,7 @@ module.exports = {
 			{ test : /\.less$/, loader : 'style-loader!css-loader!postcss-loader!less-loader'},
 			{ test : /\.css$/,  loader : 'style-loader!css-loader' },
 			{ test : /\.jsx?$/, loader : 'babel' , exclude: /(node_modules|bower_components)/},
+			{ test : /\.md|markdown$/, loader : 'babel!react-markdown-code'},
 			// { test : /\.jsx?$/ , loader : 'babel-loader' , query:{ presets : ['es2015','react'] } , exclude: /(node_modules|bower_components)/},
 			//如果不超过30000/1024kb,那么就直接采用dataUrl的形式,超过则返回链接,图片会复制到dist目录下
 			{ test: /\.(png|jpg|jpeg|gif)$/, loader: "url-loader?limit=30000" },

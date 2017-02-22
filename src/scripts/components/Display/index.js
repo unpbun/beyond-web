@@ -28,8 +28,9 @@ export default class Display extends React.Component {
 
 	constructor(props){
 		super(props)
+
 		this.state = {
-			unfold : false,
+			unfold :  !!props.defaultUnfold,
 			activeKey : '0'
 		}
 	}
@@ -66,7 +67,7 @@ export default class Display extends React.Component {
 					<div className={`${prefix}-name`}>{name}</div>
 					<div className={`${prefix}-description`}>{description}</div>
 				</div>
-				{item && (<div className={`${prefix}-body`}>{content}</div>)}
+				{(item && content) && (<div className={`${prefix}-body`}>{content}</div>)}
 				<div className={`${prefix}-operates`}>
 					{this.renderRadios(items)}
 					<span title="复制" onClick={this.handlerCopy.bind(this,code)} className={`iconfont ${prefix}-icon ${prefix}-icon-copy`} dangerouslySetInnerHTML={{__html : '&#xe669;'}}  ></span>
@@ -82,7 +83,7 @@ export default class Display extends React.Component {
 		if(unfold){
 			return (
 				<div className={`${prefix}-code`}>
-					<SyntaxHighlighter customStyle={{padding : 0,margin : 0}} language='javascript' style={syntaxStyle}>{code}</SyntaxHighlighter>
+					<SyntaxHighlighter customStyle={{padding : 0,margin : 0}} style={syntaxStyle}>{code}</SyntaxHighlighter>
 				</div>
 			)
 		}
