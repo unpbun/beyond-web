@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 // import Radio , {RadioGroup} from '../Radio'
 // import 
 import Display , {Item} from '../Display'
+import {attributes} from 'docs/index.md'
+console.log(attributes)
 import Page from '../Page'
-var test = require('../test.md')
+
 import Test from '../test.md' 
 // const test = require('../test.md')
-console.log(test)
+// console.log(test)
 class Home extends Component {
 	render() {
 		return (

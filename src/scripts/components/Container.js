@@ -1,32 +1,42 @@
 import React, {Component} from 'react'
 import Menus from './Menus'
-import Home from './pages/Home'
+// import Home from './pages/Home'
+import {attributes} from 'docs/index.md'
+import parseMarkdownData from 'scripts/commons/parseMarkdownData'
+import { Router, Route, Link,hashHistory } from 'react-router'
 const prefix = 'container'
+
+const data = parseMarkdownData(attributes)
+
+const Layout = (props)=>{
+	return  (
+		<div className={prefix}>
+			<div className={`${prefix}-sidebar`}>
+				<div className="logo">Beyond</div>
+				<Menus data={data} />
+			</div>
+			<div className={`${prefix}-main`}>{props.children}</div>
+		</div>
+	)
+}
+// console.log()
 class Container extends Component {
 
-	constructor(props){
-		super(props)
-		this.state = {
-			component : null
-		}
-	}
-
-	componentDidMount(){
-		/**
-		 * let children = <Page title="title" description="this is description">{subComponent}</Page>
-		 * this.setState({children})
-		 */
-	}
 
 	render() {
+		let routes = []
+		data.forEach((item)=>{
+			item.children.forEach(subItem=>{
+				routes.push(<Route path={`${item.menu}/${subItem.menu}`} component={subItem.component} />)
+			})
+		})
+		
 		return (
-			<div className={prefix}>
-				<div className={`${prefix}-sidebar`}>
-					<div className="logo">Beyond</div>
-					<Menus />
-				</div>
-				<div className={`${prefix}-main`}> <Home /> </div>
-			</div>
+			<Router history={hashHistory}>
+				<Route path="/" component={Layout}>
+					{routes}
+				</Route>
+			</Router>
 		)
 	}
 }

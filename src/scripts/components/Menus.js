@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {List,Item} from './Menu'
 import pageEvent from 'scripts/commons/pageEvent'
+import { Router, Route, Link } from 'react-router'
 const parse = require('beyond-lib/lib/url')
 
 class Menus extends Component {
@@ -23,27 +24,18 @@ class Menus extends Component {
 	}
 
 	render() {
+		let data = this.props.data || []
+		// let list = []
+		let list = data.map((item)=> {
+			return (
+				<List title={item.menu} key={item.menu}>
+					{item.children.map((subItem)=> <Item key={subItem.menu}><Link to={`/${item.menu}/${subItem.menu}`}>{subItem.menu}</Link></Item> )}
+				</List>
+			)
+		})
+
 		return (
-			<div>
-				<List title="原型组件">
-					<Item path="/p/document" page={require('docs/Document.md')}>Document</Item>
-					<Item>Placeholder</Item>
-					<Item>Modal</Item>
-					<Item>Grid</Item>
-					<Item>Tabs</Item>
-					<Item>Tooltip</Item>
-					<Item>Notification</Item>
-				</List>
-				<List title="组件">
-					<Item>DateTime</Item>
-				</List>
-				<List title="基础库">
-					<Item>Storage</Item>
-				</List>
-				<List title="remotes">
-					<Item>usage</Item>
-				</List>
-			</div>
+			<div>{list}</div>
 		)
 	}
 }
