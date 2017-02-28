@@ -10,12 +10,12 @@ imports :
 
 
 
-```attributes codes
+```props code1
 <button>this is a</button>
 <button>this is b</button>
 ```
 
-```attributes codes
+```props code2
 <button>this is b</button>
 <button>this is a</button>
 ```
@@ -42,10 +42,10 @@ imports :
 ## 示例代码
 ```render html
 <Display defaultUnfold name={attributes.title} description="placeholder for IE8 & IE9">
-    <Item code={attributes.codes[0]} state={attributes.uses[0]}>
+    <Item code={props.code1} state={attributes.uses[0]}>
         <button>this is a</button>
     </Item>
-     <Item code={attributes.codes[1]} state={attributes.uses[1]}>
+     <Item code={props.code2} state={attributes.uses[1]}>
         <button>this is b</button>
     </Item>
 </Display>

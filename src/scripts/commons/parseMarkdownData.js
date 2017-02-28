@@ -1,13 +1,14 @@
-class Item {
+class Menu {
 
 	constructor(){
-		this.menu = ''
+		this.name = ''
+		this.path = ''
 		this.component = null
 		this.children = []
 	}
 
-	addChild(item){
-		this.children.push(item)
+	addChild(menu){
+		this.children.push(menu)
 	}
 }
 
@@ -16,18 +17,23 @@ class Item {
 
 export default function parseMarkdownData(data={}){
 	const exports = data.exports || []
-	const menus = data.menus || []
 	let list = []
-	let len = Math.min(exports.length, menus.length)
-	for(let i = 0; i < len; i++){
-		let item = new Item
-		item.menu = menus[i]
-		list.push(item)
-		if(typeof exports[i] === 'function'){
-			item.component = exports[i]
-		}else{
-			item.children = parseMarkdownData(exports[i])
+	for(let i = 0; i< exports.length; i++){
+		let item = exports[i]
+		let {menuName, menuPath, subMenusName, subMenusPath, exports : subs} = item.defaultProps
+		subMenusName = subMenusName || []
+		subMenusPath = subMenusPath || [] 
+		const menu = new Menu
+		menu.name = menuName
+		menu.path = menuPath
+		for(let j = 0; j < subMenusName.length; j++){
+			let subMenu = new Menu
+			subMenu.path = subMenusPath[j]
+			subMenu.name = subMenusName[j]
+			subMenu.component = subs[j] || null
+			menu.addChild(subMenu)
 		}
+		list.push(menu)
 	}
 	return list
 	

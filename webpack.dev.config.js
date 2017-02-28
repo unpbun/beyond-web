@@ -27,7 +27,8 @@ module.exports = {
 	},
 
 	resolve : {
-		root : path.resolve('./src')
+		root : path.resolve('./src'),
+		extensions: ["", ".webpack.js", ".web.js", ".js", ".json", ".md" ]
 	},
 
 	postcss: function () {

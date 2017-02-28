@@ -15,12 +15,12 @@ class Menus extends Component {
 	}
 
 	hashChangeHandler(event){
-		console.log(event)
+		// console.log(event)
 		let {hash} = parse(location.href)
 		if(hash){
 			pageEvent.setCurrentPage(hash)
 		}
-		console.log(location.href)
+		// console.log(location.href)
 	}
 
 	render() {
@@ -28,8 +28,8 @@ class Menus extends Component {
 		// let list = []
 		let list = data.map((item)=> {
 			return (
-				<List title={item.menu} key={item.menu}>
-					{item.children.map((subItem)=> <Item key={subItem.menu}><Link to={`/${item.menu}/${subItem.menu}`}>{subItem.menu}</Link></Item> )}
+				<List title={item.name} key={item.name}>
+					{item.children.map((subItem)=> <Item key={subItem.name}><Link activeClassName="active" to={encodeURI(`/${item.path}/${subItem.path}`)}>{subItem.name}</Link></Item> )}
 				</List>
 			)
 		})

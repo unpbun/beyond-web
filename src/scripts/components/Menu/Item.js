@@ -3,6 +3,8 @@ import {prefix} from './consts'
 import pageEvent from 'scripts/commons/pageEvent'
 class Item extends Component {
 
+	// static defaultProps
+
 	constructor(props){
 		super(props)
 		let {page,isDefault,path} = props

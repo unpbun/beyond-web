@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
 import Menus from './Menus'
 // import Home from './pages/Home'
-import {attributes} from 'docs/index.md'
+import {props} from 'docs/index.md'
+
 import parseMarkdownData from 'scripts/commons/parseMarkdownData'
 import { Router, Route, Link,hashHistory } from 'react-router'
 const prefix = 'container'
 
-const data = parseMarkdownData(attributes)
+const data = parseMarkdownData(props)
 
 const Layout = (props)=>{
 	return  (
@@ -15,7 +16,7 @@ const Layout = (props)=>{
 				<div className="logo">Beyond</div>
 				<Menus data={data} />
 			</div>
-			<div className={`${prefix}-main`}>{props.children}</div>
+			<div className={`${prefix}-main markdown-doc`}>{props.children}</div>
 		</div>
 	)
 }
@@ -27,7 +28,8 @@ class Container extends Component {
 		let routes = []
 		data.forEach((item)=>{
 			item.children.forEach(subItem=>{
-				routes.push(<Route path={`${item.menu}/${subItem.menu}`} component={subItem.component} />)
+				let url = encodeURI(`${item.path}/${subItem.path}`)
+				routes.push(<Route key={url} path={url} component={subItem.component} />)
 			})
 		})
 		

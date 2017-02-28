@@ -24,6 +24,7 @@ module.exports = {
 		loaders: [
 			{ test : /\.less$/, loader : ExtractTextPlugin.extract('style-loader','css-loader!postcss-loader!less-loader',{publicPath : ''}) },
 			{ test : /\.css$/,  loader : ExtractTextPlugin.extract('style-loader','css-loader',{publicPath : ''}) },
+			{ test : /\.md|markdown$/, loader : 'babel!react-markdown-code'},
 			// { test: /\.jsx?$/, loader : 'uglify-loader!babel-loader?presets[]=react,presets[]=es2015' , exclude: /(node_modules|bower_components)/},
 			{ test : /\.jsx?$/ ,loader : 'babel' , exclude: /(node_modules|bower_components)/},
 			{ test : /\.md|markdown$/, loader : 'babel!react-markdown'},
@@ -33,7 +34,8 @@ module.exports = {
 	},
 
 	resolve : {
-		root : path.resolve('./src')
+		root : path.resolve('./src'),
+		extensions: ["", ".webpack.js", ".web.js", ".js", ".json", ".md" ]
 	},
 	postcss: function () {
 		return [require('autoprefixer'),require('postcss-filter-gradient')]

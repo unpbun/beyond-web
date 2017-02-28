@@ -1,11 +1,30 @@
 ---
-menus : 
+
+menuName : '原型/功能 组件'
+menuPath : beyond-components
+subMenusName : 
     - Document
     - Placeholder
-imports : 
-    Document : './Document.md'
-    Placeholder : './Placeholder.md'
-exports :
-    - Document
-    - Placeholder
+    - Modal
+    - Grid
+    - Tabs
+    - Tooltip
+    - Notification
+subMenusPath : 
+    - document
+    - placeholder
+    - modal
+    - grid
+    - tabs
+    - tooltip
+    - notification
+includes() : 
+    - './Document'
+    - './Placeholder'
+    - './Modal'
+    - './Grid'
+    - './Tabs'
+    - './Tooltip'
+    - './Notification'
+
 ---

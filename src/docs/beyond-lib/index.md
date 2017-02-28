@@ -1,12 +1,15 @@
 ---
-menus : 
-    - storage
-    - urlParse
-imports : 
-    storage : './storage.md'
-    urlParse : './urlParse.md'
-exports :
-    - storage
-    - urlParse
+
+menuName : 基础库
+menuPath : beyond-lib
+subMenusName : 
+    - 'storage'
+    - 'urlParse'
+subMenusPath : 
+    - 'storage'
+    - 'urlParse'
+includes() : 
+    - './storage'
+    - './urlParse'
 
 ---
