@@ -1,7 +1,11 @@
 ---
 
 includes() : 
-    - './beyond-components'
+    - './guide'
+    - './boilerplate'
     - './beyond-lib'
-
+    - './libs'
+    - './beyond-components'
+    - './components'
+    - './develop'
 ---

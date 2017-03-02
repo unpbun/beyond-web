@@ -27,7 +27,7 @@ module.exports = {
 	},
 
 	resolve : {
-		root : path.resolve('./src'),
+		root : [path.resolve('./src'),path.resolve('./src/scripts/components')],
 		extensions: ["", ".webpack.js", ".web.js", ".js", ".json", ".md" ]
 	},
 

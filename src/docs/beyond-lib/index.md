@@ -3,13 +3,28 @@
 menuName : 基础库
 menuPath : beyond-lib
 subMenusName : 
-    - 'storage'
-    - 'urlParse'
+    - assign
+    - browser
+    - dateDiff
+    - dateFormat
+    - htmlHelper
+    - storage
+    - url
 subMenusPath : 
+    - 'assign'
+    - 'browser'
+    - 'dateDiff'
+    - 'dateFormat'
+    - 'htmlHelper'
     - 'storage'
-    - 'urlParse'
+    - 'url'
 includes() : 
+    - './assign'
+    - './browser'
+    - './dateDiff'
+    - './dateFormat'
+    - './htmlHelper'
     - './storage'
-    - './urlParse'
+    - './url'
 
 ---

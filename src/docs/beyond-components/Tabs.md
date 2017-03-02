@@ -1,7 +1,7 @@
 ---
 
 title : Tabs
-description : 基本标签页组件库
+description : 标签页组件库
 requires() :
     - 'beyond-components/lib/Tabs/index.css'
 imports() : 
@@ -19,7 +19,7 @@ imports() :
 
 ## 使用场景
 
-- 基本标签页组件库
+- 页面分类展示
 
 
 
@@ -30,10 +30,10 @@ require('beyond-components/lib/Tabs/index.css')
 import Tabs,{Tab} from 'beyond-components/lib/Tabs'
 
 <Tabs defaultActiveKey="0">
-    <Tab title="页面1" key="0">页面1的内容</Tab>
-    <Tab title="页面2" key="1" disabled>页面2的内容</Tab>
-    <Tab title="页面3" key="2">页面3的内容</Tab>
-    <Tab title="页面4" key="3">页面4的内容</Tab>
+    <Tab title="标题1" key="0">内容1</Tab>
+    <Tab title="标题2" key="1" disabled>内容2</Tab>
+    <Tab title="标题3" key="2">内容3</Tab>
+    <Tab title="标题4" key="3">内容4</Tab>
 </Tabs>
 ```
 
@@ -43,10 +43,10 @@ import Tabs,{Tab} from 'beyond-components/lib/Tabs'
 <Display  name={props.title} description={props.description}>
     <Item code={_code} state="默认">
         <Tabs defaultActiveKey="0">
-            <Tab title="页面1" key="0">页面1的内容</Tab>
-            <Tab title="页面2" key="1" disabled>页面2的内容</Tab>
-            <Tab title="页面3" key="2">页面3的内容</Tab>
-            <Tab title="页面4" key="3">页面4的内容</Tab>
+            <Tab title="标题1" key="0">内容1</Tab>
+            <Tab title="标题2" key="1" disabled>内容2</Tab>
+            <Tab title="标题3" key="2">内容3</Tab>
+            <Tab title="标题4" key="3">内容4</Tab>
         </Tabs>
     </Item>
 </Display>

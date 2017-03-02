@@ -26,9 +26,9 @@ class Menus extends Component {
 	render() {
 		let data = this.props.data || []
 		// let list = []
-		let list = data.map((item)=> {
+		let list = data.map((item,i)=> {
 			return (
-				<List title={item.name} key={item.name}>
+				<List title={item.name} key={item.name} defaultUnfold={i===0}>
 					{item.children.map((subItem)=> <Item key={subItem.name}><Link activeClassName="active" to={encodeURI(`/${item.path}/${subItem.path}`)}>{subItem.name}</Link></Item> )}
 				</List>
 			)

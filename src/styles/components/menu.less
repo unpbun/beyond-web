@@ -1,28 +1,33 @@
 .menu{
     &-list{
         color: @base;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     &-list>&-list-title{
+
         font-weight: bold;
-        height: 45px;
-        line-height: 45px;
+        height: 47px;
+        line-height: 47px;
         padding-left: 30px;
         cursor: pointer;
+        &:hover{
+            color: @active;
+            // background: #EBEDF7;
+        }
     }
-    &-list>&-items{
+    &-list>&-list-title+&-items{
         border-top: 1px solid #d8d9e3;
         padding-bottom: 10px;
     }
     &-list>&-items>&-item{
-        height: 45px;
-        line-height: 45px;
+        height: 43px;
+        line-height: 43px;
         padding-left: 45px;
+        cursor: pointer;
         &:hover{
             background: #EBEDF7;
             color: @active;
-            cursor: pointer;
         }
     }
     &-list>&-items>&-item>a{

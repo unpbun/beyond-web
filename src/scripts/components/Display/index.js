@@ -22,7 +22,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter'
 import syntaxStyle from 'react-syntax-highlighter/dist/styles/arduino-light'
 const prefix = 'display'
 
-export const Item = (props)=> <div></div>
+export const Item = (props)=> <div style={{display : props.active ? 'block' : 'none' }}>{props.children}</div>
 
 export default class Display extends React.Component {
 
@@ -31,11 +31,12 @@ export default class Display extends React.Component {
 
 		this.state = {
 			unfold :  !!props.defaultUnfold,
-			activeKey : '0'
+			activeKey : 0
 		}
 	}
 
 	handlerChange(activeKey){
+		activeKey = +activeKey
 		this.setState({activeKey})
 	}
 
@@ -58,20 +59,28 @@ export default class Display extends React.Component {
 		}else{
 			items = []
 		}
-		let item = items[activeKey]
-		let code = item ? item.props.code : null
-		let content = item ? item.props.children : null
+		items = items.map((item,i)=> {
+			return i !== activeKey ? item : React.cloneElement(item,{active : true})
+		})
+		let activeItem= items[activeKey]
+		let code = activeItem && activeItem.props ? activeItem.props.code : null
+		// let activeContent = activeItem ? activeItem.props.children : null
 		return (
 			<div className={prefix}>
 				<div className={`${prefix}-header`}>
 					<div className={`${prefix}-name`}>{name}</div>
 					<div className={`${prefix}-description`}>{description}</div>
 				</div>
-				{(item && content) && (<div className={`${prefix}-body`}>{content}</div>)}
+				<div className={`${prefix}-body`}>{items}</div>
 				<div className={`${prefix}-operates`}>
 					{this.renderRadios(items)}
-					<span title="复制" onClick={this.handlerCopy.bind(this,code)} className={`iconfont ${prefix}-icon ${prefix}-icon-copy`} dangerouslySetInnerHTML={{__html : '&#xe669;'}}  ></span>
-					<span onClick={this.handlerUnfold.bind(this)} className={`iconfont ${prefix}-icon ${prefix}-icon-unfold`} dangerouslySetInnerHTML={{__html : unfold ? '&#xeb3d;' : '&#xeb3e;'}} ></span>
+					<span title="复制" 
+						onClick={this.handlerCopy.bind(this,code)} 
+						className={`iconfont ${prefix}-icon ${prefix}-icon-copy`} 
+						dangerouslySetInnerHTML={{__html : '&#xe669;'}} />
+					<span onClick={this.handlerUnfold.bind(this)} 
+						className={`iconfont ${prefix}-icon ${prefix}-icon-unfold`} 
+						dangerouslySetInnerHTML={{__html : unfold ? '&#xeb3d;' : '&#xeb3e;'}} />
 				</div>
 				{this.renderCode(code)}
 			</div>
@@ -90,9 +99,9 @@ export default class Display extends React.Component {
 	}
 
 	renderRadios(items){
-		if(items && items.length > 1){
+		if(items && items.length > 0){
 			let {activeKey} = this.state
-			return <RadioGroup inline activeKey={activeKey} onChange={this.handlerChange.bind(this)}>{items.map((item,i)=> <Radio label={item.props.state} key={i+''} /> )}</RadioGroup>
+			return <RadioGroup inline activeKey={activeKey+''} onChange={this.handlerChange.bind(this)}>{items.map((item,i)=> <Radio label={item.props.state} key={i+''} /> )}</RadioGroup>
 		}
 	}
 

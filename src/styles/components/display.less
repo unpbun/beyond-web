@@ -17,18 +17,22 @@
 	}
 	&>&-body{
 		padding: 10px 15px;
+		&:empty{
+			display: none;
+		}
 	}
 	&>&-operates{
 		position: relative;
-		padding: 12px 15px;
+		padding: 0px 15px;
+		line-height: 45px;
 		box-sizing: border-box;
-		min-height: 50px;
+		height: 45px;
 		border-top: 2px solid #ecedf2;
 	}
 	&>&-operates>&-icon{
 		position: absolute;
 		right: 15px;
-		top: 12px;
+		top: 0;
 		cursor : pointer;
 		color : inherit;
 		// float: right;
@@ -39,7 +43,7 @@
 	}
 	&>&-code{
 		padding : 0px 15px 10px 15px;
-		
+		line-height: 1.4;
 	}
 	
 }

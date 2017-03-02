@@ -1,11 +1,10 @@
 ---
 
 title : Modal
-description : 基本弹窗组件
+description : 弹窗组件
 imports() : 
     Header : 'scripts/components/Header'
     'Display,{Item}' : 'scripts/components/Display'
-    Modal : 'beyond-components/lib/Modal'
     ModalExample : 'examples/Modal'
 
 ---

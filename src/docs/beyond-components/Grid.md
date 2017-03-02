@@ -1,7 +1,7 @@
 ---
 
 title : Grid
-description : 基本排版布局组件
+description : 排版布局组件
 requires() :
     - 'beyond-components/lib/Grid/index.css'
 imports() : 

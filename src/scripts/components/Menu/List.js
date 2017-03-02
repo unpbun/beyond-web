@@ -1,4 +1,8 @@
 /**
+ * 
+ * <List>
+ * 		<Item link="">组件一</Item>
+ * </List> 
  * <List title="GUIDE">
  * 		<Item link="">组件一</Item>
  * 		<Item link="">组件二</Item>
@@ -14,7 +18,7 @@ class List extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
-			unfold : props.unfold == null ? true : props.unfold
+			unfold : props.defaultUnfold == null ? true : props.defaultUnfold
 		}
 	}
 
@@ -25,11 +29,11 @@ class List extends Component {
 
 	render() {
 		const {title,children} = this.props
-		const {unfold} = this.state
+		let {unfold} = this.state
 		return (
 			<div className={`${prefix}-list`}>
-				<div onClick={this.handlerTriggerUnfold.bind(this)} className={`${prefix}-list-title`}>{title}</div>
-				{unfold && <div className={`${prefix}-items`}>{children}</div>}
+				{title && <div onClick={this.handlerTriggerUnfold.bind(this)} className={`${prefix}-list-title`}>{title}</div>}
+				{(unfold || !title) && <div className={`${prefix}-items`}>{children}</div>}
 			</div>
 		)
 	}

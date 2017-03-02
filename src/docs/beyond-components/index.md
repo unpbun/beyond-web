@@ -1,6 +1,6 @@
 ---
 
-menuName : '原型/功能 组件'
+menuName : '基础组件'
 menuPath : beyond-components
 subMenusName : 
     - Document
