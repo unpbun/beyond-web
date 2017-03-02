@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "beyond-components": "^0.2.0-beta2",
+    "beyond-datetime": "^1.3.8",
     "beyond-lib": "^1.0.2",
     "beyond-remote": "^0.4.5",
     "copy-to-clipboard": "^3.0.5",
