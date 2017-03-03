@@ -10,9 +10,9 @@
  * 
  */
 
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {prefix} from './consts'
-
+const classnames = require('classnames')
 class List extends Component {
 
 	constructor(props){
@@ -31,7 +31,7 @@ class List extends Component {
 		const {title,children} = this.props
 		let {unfold} = this.state
 		return (
-			<div className={`${prefix}-list`}>
+			<div className={classnames(`${prefix}-list`,unfold && `${prefix}-unfold` )}>
 				{title && <div onClick={this.handlerTriggerUnfold.bind(this)} className={`${prefix}-list-title`}>{title}</div>}
 				{(unfold || !title) && <div className={`${prefix}-items`}>{children}</div>}
 			</div>

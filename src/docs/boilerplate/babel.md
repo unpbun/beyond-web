@@ -1,5 +1,4 @@
-```basl
-
+```cli
 git clone https://github.com/bestsuperdev/react-less-boilerplate
-
 ```
+

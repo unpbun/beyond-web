@@ -15,11 +15,8 @@
 	&>&-header>&-description{
 		font-size: 14px;
 	}
-	&>&-body{
+	&>&-demos>&-demo{
 		padding: 10px 15px;
-		&:empty{
-			display: none;
-		}
 	}
 	&>&-operates{
 		position: relative;
@@ -28,6 +25,7 @@
 		box-sizing: border-box;
 		height: 45px;
 		border-top: 2px solid #ecedf2;
+		margin-bottom: 8px;
 	}
 	&>&-operates>&-icon{
 		position: absolute;
@@ -42,8 +40,18 @@
 		right: 35px;
 	}
 	&>&-code{
-		padding : 0px 15px 10px 15px;
-		line-height: 1.4;
+		padding : 0px 15px 15px 15px;
+		// line-height: 1.4;
+		>pre{
+			margin: 0;
+			padding: 0;
+			background: transparent!important;
+			line-height: 1.3;
+			>code{
+				font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+				line-height: inherit;
+			}
+		}
 	}
 	
 }

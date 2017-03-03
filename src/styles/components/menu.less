@@ -11,10 +11,29 @@
         line-height: 47px;
         padding-left: 30px;
         cursor: pointer;
+        position: relative;
+        &:after{
+            content: "";
+            display: block;
+            position: absolute;
+            right: 34px;
+            width: 0;
+            height: 0;
+            border-width: 4px 3px;
+            border-color: transparent;
+            border-style: solid;
+            border-left-color: #7F8DC2 ;
+            top: 0;
+            bottom: 0;
+            margin:  auto 0;
+        }
         &:hover{
             color: @active;
             // background: #EBEDF7;
         }
+    }
+    &-list&-unfold>&-list-title:after{
+        transform: rotate(90deg)
     }
     &-list>&-list-title+&-items{
         border-top: 1px solid #d8d9e3;
