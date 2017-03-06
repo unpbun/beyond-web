@@ -34,10 +34,10 @@ imports() :
 
 ```render 
 <Display defaultUnfold name="安装脚手架">
-	<Item state="react-less-boilerplate" code="git clone https://github.com/bestsuperdev/react-less-boilerplate --depth=1"></Item>
-	<Item state="ts-boilerplate2" code="git clone https://github.com/bestsuperdev/ts-boilerplate2 --depth=1"></Item>
+	<Item key="0" state="react-less-boilerplate" code="git clone https://github.com/bestsuperdev/react-less-boilerplate --depth=1"></Item>
+	<Item key="0" state="ts-boilerplate2" code="git clone https://github.com/bestsuperdev/ts-boilerplate2 --depth=1"></Item>
 </Display>
 
 ```
 
-具体的使用，可以查看脚手架页面的文档说明。
+**具体的使用，可以查看脚手架页面的文档说明。**
