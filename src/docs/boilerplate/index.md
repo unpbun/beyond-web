@@ -1,18 +1,12 @@
 ---
 
-menuName : 脚手架
+menuName : 
 menuPath : boilerplate
 subMenusName :
-    - 简介
-    - babel
-    - typescript
+    - 脚手架
 subMenusPath : 
     - intro
-    - babel
-    - typescript
 includes() : 
     - './intro'
-    - './babel'
-    - './typescript'
 
 ---
