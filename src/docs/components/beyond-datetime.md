@@ -192,7 +192,7 @@ class App extends Component {
 	render(){
 		return (
 			<div>
-				<Trigger target={<Calendar  onChange={this.handlerChange.bind(this)} />}>
+				<Trigger target={<Calendar  onConfirm={this.handlerChange.bind(this)} />}>
 					<input type="text" value={this.state.date ? this.state.date.format('YYYY.MM.DD') : '' } />
 				</Trigger>
 			</div>
@@ -205,10 +205,10 @@ class App extends Component {
 ```render
 
 <Display  name="输入框选择" >
-    <Item key="1" code={_trigger2} state="change事件">
+    <Item key="1" code={_trigger2} state="日期">
         <div><TriggerExample2  /></div>
     </Item>
-    <Item key="0" code={_trigger} state="confirm事件">
+    <Item key="0" code={_trigger} state="日期时间">
         <div><TriggerExample  /></div>
     </Item>
 </Display>

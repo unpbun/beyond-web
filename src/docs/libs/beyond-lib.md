@@ -16,7 +16,8 @@ imports() :
 
 ## 使用场景
 
-beyond-lib 是一套前端基础库，提供常见的一些功能
+beyond-lib 是一套前端基础库，提供一些常用的基本功能 [https://github.com/bestsuperdev/beyond-lib](https://github.com/bestsuperdev/beyond-lib)
+
 
 
 ## 安装

@@ -41,7 +41,7 @@ class TriggerExample2 extends Component {
 	render(){
 		return (
 			<div>
-				<Trigger target={<Calendar onChange={this.handlerChange.bind(this)} />}>
+				<Trigger target={<Calendar onConfirm={this.handlerChange.bind(this)} />}>
 					<input type="text" value={this.state.date ? this.state.date.format('YYYY.MM.DD') : '' } />
 				</Trigger>
 			</div>

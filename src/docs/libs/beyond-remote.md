@@ -12,9 +12,9 @@ imports() :
 ```render html
 <Header title={props.title} description={props.description} /> 
 ```
-## 使用场景
+## 简介
 
-用于封装ajax和fetch请求
+用于统一封装 ajax 请求，兼容到 IE8 ，默认使用 fetch 接口，如不支持，向下兼容使用 XMLHttpRequest 对象。 [https://github.com/bestsuperdev/beyond-lib](https://github.com/bestsuperdev/beyond-lib)
 
 ## 使用前事项
 
