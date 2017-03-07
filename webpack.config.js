@@ -12,14 +12,14 @@ module.exports = {
 	},
 	output: {
 		path: path.join(__dirname,'dist'),
-		// publicPath: "/bundles/",
+		publicPath: "/",
 		filename: '[name].[hash].bundle.js',
 		chunkFilename: '[id].[chunkhash].chunk.js'
 	},
-	externals : {
-		'react' : 'React',
-		'react-dom' : 'ReactDOM'
-	},
+	// externals : {
+	// 	'react' : 'React',
+	// 	'react-dom' : 'ReactDOM'
+	// },
 	module: {
 		loaders: [
 			{ test : /\.less$/, loader : ExtractTextPlugin.extract('style-loader','css-loader!postcss-loader!less-loader',{publicPath : ''}) },
@@ -27,7 +27,6 @@ module.exports = {
 			{ test : /\.md|markdown$/, loader : 'babel!react-markdown-code'},
 			// { test: /\.jsx?$/, loader : 'uglify-loader!babel-loader?presets[]=react,presets[]=es2015' , exclude: /(node_modules|bower_components)/},
 			{ test : /\.jsx?$/ ,loader : 'babel' , exclude: /(node_modules|bower_components)/},
-			{ test : /\.md|markdown$/, loader : 'babel!react-markdown'},
 			{ test : /\.(png|jpg|jpeg|gif)$/, loader: 'url-loader?limit=30000' },
 			{ test : /\.(svg|ttf|eot|svg|woff(\(?2\)?)?)(\?[a-zA-Z_0-9.=&]*)?(#[a-zA-Z_0-9.=&]*)?$/, loader : 'file-loader'}
 		]

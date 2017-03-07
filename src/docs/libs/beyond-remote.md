@@ -12,23 +12,35 @@ imports() :
 ```render html
 <Header title={props.title} description={props.description} /> 
 ```
+## 使用场景
+
+用于封装ajax和fetch请求
 
 ## 使用前事项
 
-用于封装ajax和fetch请求，此库使用 promise，推荐使用 es6-promise 。如果是使用 webpack 打包，需在入口文件顶部使用es6-promise。
-
+此库使用 promise，推荐使用 es6-promise 。如果是使用 webpack 打包，需在入口文件顶部使用es6-promise。
 
 
 ```render
 <Display defaultUnfold  name="引入 es6-promise">
-    <Item code={"require('es6-promise').polyfill()"}>
+    <Item code="require('es6-promise').polyfill()">
     </Item>
+</Display>
+```
+如果是 IE8 环境下，还需要引入 es5-shim。
+
+
+## 安装
+
+```render
+<Display name="安装" defaultUnfold>
+	<Item lang="bash" code="npm install beyond-remote  --save"></Item>
 </Display>
 ```
 
 
 
-如果是 IE8 环境下，还需要引入 es5-shim。
+
 
 
 ## 基本使用 

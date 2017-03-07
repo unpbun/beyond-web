@@ -5,5 +5,4 @@ includes() :
     - './libs'
     - './beyond-components'
     - './components'
-    - './develop'
 ---

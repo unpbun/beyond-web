@@ -14,9 +14,22 @@ imports() :
 ```
 
 
-## assign
+## 使用场景
+
+beyond-lib 是一套前端基础库，提供常见的一些功能
 
 
+## 安装
+
+```render
+<Display name="安装" defaultUnfold>
+	<Item lang="bash" code="npm install beyond-lib  --save"></Item>
+</Display>
+```
+## 文档
+
+
+**assign**
 
 ```source _code
 const assign = require('beyond-lib/lib/assign')
@@ -43,7 +56,7 @@ const obj = assign({},{bar : 1},{foo : 2})
 ```
 
 
-## browser
+**browser**
 
 
 ```source _browser
@@ -87,7 +100,7 @@ info.isLinux
 
 
 
-## dateDiff
+**dateDiff**
 
 
 ```source _dateDiff
@@ -122,7 +135,7 @@ dateDiff.seconds(date1,date2)
 ```
 
 
-## dateFormat
+**dateFormat**
 
 
 
@@ -146,7 +159,7 @@ dateFormat('yyyy',+new Date(2000,01,01))   // 2000
 
 ```
 
-**格式规范**
+格式规范
 
 | 类型 | 说明   |  类型 | 说明   |  
 | -----| -----  | -----| -----  | 
@@ -160,7 +173,7 @@ dateFormat('yyyy',+new Date(2000,01,01))   // 2000
 | S    | 毫秒 |   u    | 星期几，0-6,0表示周日 |  
 
 
-## htmlHelper
+**htmlHelper**
 
 
 ```source _htmlHelper
@@ -180,7 +193,7 @@ htmlHelper.decodeHTML('&lt;a href=&quot;#&quot;&gt;hello&amp;&#039;quote&#039;&l
 
 ```
 
-**编码规则**
+编码规则
 
 | 原字符 | 编码后 |  
 | -----| -----  | 
@@ -191,7 +204,7 @@ htmlHelper.decodeHTML('&lt;a href=&quot;#&quot;&gt;hello&amp;&#039;quote&#039;&l
 | ' |  \&#039; |  
 
 
-## storage
+**storage**
 
 
 ```source _storage
@@ -226,7 +239,7 @@ storage.removeCookie('key')
 
 
 
-## url
+**url**
 
 ```source _url
 var parse = require('beyond-lib/lib/url')

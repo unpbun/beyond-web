@@ -18,7 +18,7 @@ class List extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
-			unfold : props.defaultUnfold == null ? true : props.defaultUnfold
+			unfold : true //props.defaultUnfold == null ? true : props.defaultUnfold
 		}
 	}
 

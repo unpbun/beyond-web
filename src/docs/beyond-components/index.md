@@ -3,6 +3,7 @@
 menuName : '基础组件'
 menuPath : beyond-components
 subMenusName : 
+    - 简介
     - Document
     - Placeholder
     - Modal
@@ -10,7 +11,8 @@ subMenusName :
     - Tabs
     - Tooltip
     - Notification
-subMenusPath : 
+subMenusPath :
+    - intro
     - document
     - placeholder
     - modal
@@ -19,6 +21,7 @@ subMenusPath :
     - tooltip
     - notification
 includes() : 
+    - './Intro'
     - './Document'
     - './Placeholder'
     - './Modal'

@@ -4,7 +4,7 @@ import Menus from './Menus'
 import {props} from 'docs/index.md'
 
 import parseMarkdownData from 'scripts/commons/parseMarkdownData'
-import { Router, Route, Link,hashHistory } from 'react-router'
+import { Router, Route, IndexRedirect, browserHistory  } from 'react-router'
 const prefix = 'container'
 
 const data = parseMarkdownData(props)
@@ -26,15 +26,19 @@ class Container extends Component {
 
 	render() {
 		let routes = []
-		data.forEach((item)=>{
-			item.children.forEach(subItem=>{
+		let indexUrl
+		data.forEach((item,i)=>{
+			item.children.forEach((subItem,j)=>{
 				let url = encodeURI(`${item.path}/${subItem.path}`)
 				routes.push(<Route key={url} path={url} component={subItem.component} />)
+				if(i === 0 && j === 0){
+					indexUrl = `/${url}`					
+				}
 			})
 		})
-		
+		routes = [<IndexRedirect to={indexUrl} />].concat(routes)
 		return (
-			<Router history={hashHistory}>
+			<Router history={browserHistory}>
 				<Route path="/" component={Layout}>
 					{routes}
 				</Route>
