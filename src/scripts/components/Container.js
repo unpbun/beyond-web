@@ -36,7 +36,7 @@ class Container extends Component {
 				}
 			})
 		})
-		routes = [<IndexRedirect to={indexUrl} />].concat(routes)
+		routes = [<IndexRedirect key="-1" to={indexUrl} />].concat(routes)
 		return (
 			<Router history={browserHistory}>
 				<Route path="/" component={Layout}>

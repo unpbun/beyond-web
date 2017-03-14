@@ -17,11 +17,22 @@ imports() :
 
 
 
-## 示例代码
+## 安装
 
 ```source _install
 npm install beyond-datetime  --save
 ```
+
+
+
+```render
+<Display defaultUnfold name="安装" >
+    <Item key="0" code={_install} lang="bash" ></Item>
+</Display>
+```
+
+## 示例代码
+
 
 
 ```source _date
@@ -115,12 +126,6 @@ class MyComponent extends Component {
 }
 
 
-```
-
-```render
-<Display defaultUnfold name="安装" >
-    <Item key="0" code={_install} lang="bash" ></Item>
-</Display>
 ```
 
 

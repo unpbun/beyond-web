@@ -16,6 +16,7 @@
     "beyond-datetime": "^1.3.8",
     "beyond-lib": "^1.0.2",
     "beyond-remote": "^0.4.5",
+    "beyond-slider": "^0.1.0",
     "classnames": "^2.2.5",
     "copy-to-clipboard": "^3.0.5",
     "es6-promise": "^4.0.5",

@@ -13,14 +13,19 @@ imports() :
 ```
 
 
-##  脚手架是什么？
+##  脚手架是什么
 
-脚手架是一套完整的开发环境，集成了整个开发过程中的各类工具，开箱即用，Beyond 目前提供了两套脚手架 ：[react-less-boilerplate](https://github.com/bestsuperdev/react-less-boilerplate) 和 [ts-boilerplate2](https://github.com/bestsuperdev/ts-boilerplate2)， 前者采用 babel ，支持 es2015 的写法，后者采用 typescript ，其余功能一致， 以下是脚手架的具体功能
+脚手架是一套完整的开发环境，集成了整个开发过程中的各类工具，开箱即用，Beyond 目前提供了以下脚手架 ：
+
+- [ts-boilerplate2（推荐使用）](https://github.com/bestsuperdev/ts-boilerplate2)
+- [react-less-boilerplate（即将废弃）](https://github.com/bestsuperdev/react-less-boilerplate) 
+- [react-less-boilerplate2（推荐使用）](https://github.com/bestsuperdev/react-less-boilerplate2) 
+- [react-component-boilerplate（开发组件使用）](https://github.com/bestsuperdev/react-less-boilerplate) 
+
+脚手架集成的功能如下
 
 - React
 - Beyond 基础类库
-    - beyond-lib 
-    - beyond-remote
 - 开发服务器 webpack-dev-server
 - 模块依赖 webpack
 - 代码编译  bable/typescript + less
@@ -34,7 +39,7 @@ imports() :
 
 ```render 
 <Display defaultUnfold name="安装脚手架">
-	<Item key="0" state="react-less-boilerplate" code="git clone https://github.com/bestsuperdev/react-less-boilerplate --depth=1"></Item>
+	<Item key="0" state="react-less-boilerplate2" code="git clone https://github.com/bestsuperdev/react-less-boilerplate2 --depth=1"></Item>
 	<Item key="0" state="ts-boilerplate2" code="git clone https://github.com/bestsuperdev/ts-boilerplate2 --depth=1"></Item>
 </Display>
 
